@@ -1,0 +1,154 @@
+<ion-view view-title="Eventula - Sign In / Sign Up" class='login-background'>
+	<ion-nav-bar class="bar-stable" hide-back-button=true>
+	</ion-nav-bar>
+	 <ion-content has-header="true"  padding="true" > 
+	 	
+	 <a href="#" class="item item-icon-left item-icon-right trans no-margin" ng-click="hideNewUser()">
+			<i class="icon ion-happy-outline"></i>
+				 <p>Already Registered</p>	  
+				 
+				<i  class="icon trans">	<p>Login with &nbsp;&nbsp;</p><img src="img/fbLogo3.jpg" class="styleRound3" ng-click="fbLogin()"> </i>
+			 
+	</a>
+	 <div id="login"  class="list " style = "margin:0">
+		
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="loginData.username" placeholder="Username">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password" placeholder="Password">
+        </label>
+       </div>
+		
+		<div class="title login-padding" id="loginBtn" align="right">
+		<button  class="button button-positive styleRound2" ng-click="doLogin()">Sign In</button>
+		</div >
+		
+	<a href="#" id="editUser" class="item item-icon-left trans no-margin" ng-click="changeUserPopover.show($event)"> <!--"hideOldUser()"-->
+			<i class="icon ion-person-stalker"></i>
+				<p>Change User Detail</p>
+	</a>			
+				<div id="oldUser" class="list" style="display:none;">
+		 
+				<label class="item item-input item-select">
+					<div class="input-label">
+					  Country
+					</div>
+					<select ng-model="oldLogin.country" >
+					<option ng-repeat="country in newLoginCountries |orderBy:'name'">{{country.name}}</option>
+						
+					  
+					</select>
+				  </label>
+				  
+				  <label class="item item-input item-floating-label">
+				  <span class="input-label">Name</span>
+				  <input type="text" ng-model="oldLogin.name" placeholder="Name">
+				</label>
+				
+				<label class="item item-input item-floating-label">
+				  <span class="input-label">Surname</span>
+				  <input type="text" ng-model="oldLogin.surname" placeholder="Surname">
+				</label>
+				
+				<label class="item item-input item-floating-label">
+				  <span class="input-label">Username</span>
+				  <input type="text" ng-model="oldLogin.userName" placeholder="Username">
+				</label>
+				 
+				<label class="item item-input item-floating-label">
+				  <span class="input-label">Password</span>
+				  <input type="password" ng-model="oldLogin.password" placeholder="Password">
+				</label>
+				
+			   <label class="item item-input item-floating-label">
+				  <span class="input-label">Confirm Password</span>
+				  <input type="password" ng-model="oldLogin.confirmPassword" placeholder="Confirm Password">
+				</label>
+				
+				<div class="title login-padding" align="right">
+				<button  class="button button-block button-positive styleRound2" ng-click="createLogin('true')">Update</button>
+				</div >
+				
+			  </div>
+	
+	<a href="#" class="item item-icon-left trans no-margin" ng-click="hideLogin()">
+			<i class="icon ion-person"></i>
+				<p>Not Registered Yet?</p>
+	</a>			
+				<div id="newUser" class="list" style="display:none;">
+		 
+				<label class="item item-input item-select">
+					<div class="input-label">
+					  Country
+					</div>
+					<select ng-model="newLogin.country" ng-init="newLogin.country='United Kingdom'">
+					<option ng-repeat="country in newLoginCountries |orderBy:'name'">{{country.name}}</option>
+						
+					</select>
+				  </label>
+				  
+				  <label class="item item-input item-floating-label">
+				  <span class="input-label">Name</span>
+				  <input type="text" ng-model="newLogin.name" placeholder="Name">
+				</label>
+				
+				<label class="item item-input item-floating-label">
+				  <span class="input-label">Surname</span>
+				  <input type="text" ng-model="newLogin.surname" placeholder="Surname">
+				</label>
+				
+				<label class="item item-input item-floating-label">
+				  <span class="input-label">Username</span>
+				  <input type="text" ng-model="newLogin.userName" placeholder="Username">
+				</label>
+				 
+				<label class="item item-input item-floating-label">
+				  <span class="input-label">Password</span>
+				  <input type="password" ng-model="newLogin.password" placeholder="Password">
+				</label>
+				
+			   <label class="item item-input item-floating-label">
+				  <span class="input-label">Confirm Password</span>
+				  <input type="password" ng-model="newLogin.confirmPassword" placeholder="Confirm Password">
+				</label>
+				
+				<div class="title login-padding" align="right">
+				<button  class="button button-block button-positive styleRound2" ng-click="createLogin('false')">Sign Up</button>
+				</div >
+				
+			  </div>
+			  
+			  
+	
+		<div class="title ">
+		<a href="#" class="item item-icon-left trans no-margin">
+		</a> 
+		
+		<!--<div align="right">
+			<p>Sign in with your Facebook account</p> 
+			</div>
+			 
+			 <!-- <span class="eventful-span">
+			 <a class="item item-avatar trans no-margin-fbgoogleicon">
+			  <img src="img/googlePlusLogo3.jpg" ng-click="googleLogin()">
+			 </a>
+			 </span> -->
+			 
+			<!-- <span class="eventful-span">
+			 <a class="item item-avatar trans no-margin-fbgoogleicon">
+			 <img src="img/fbLogo3.jpg" ng-click="fbLogin()">
+			  
+			  
+			  </a>
+			 </span>
+			 
+			 
+		</div> -->
+		
+  </ion-content> 
+ 
+  
+</ion-view>

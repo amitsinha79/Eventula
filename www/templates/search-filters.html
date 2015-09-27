@@ -1,0 +1,71 @@
+<ion-modal-view class="mymodal">
+  <ion-header-bar class="bar-stable">
+		<h1 class="title">Filter Search Result</h1>
+		<div class="buttons">
+		  <button class="button button-icon icon ion-ios-close-outline customSize" ng-click="closeSearchFilters()"></button>
+		</div>
+	</ion-header-bar>
+	<ion-header-bar class="bar-subheader headr" >
+	 <!-- <div class="bar bar-subheader"> - having an extra div line, used ion-header-bar to remove that-->
+	 
+	
+		<div class="list">
+		  <label class="item item-input item-select ">
+			 <div class="input-label">
+			  Filter By
+			</div>
+			<select ng-model="attribute" ng-init="attribute='city_name'"  >
+				<!-- <option value='xxx' selected>--Filter By--</option> -->
+				<option value="city_name" selected>City</option>
+				<option value="title">Title</option>
+			</select>
+		  </label>
+		
+	</div> 
+	
+	</ion-header-bar>
+	<ion-content has-header="true" has-subheader="true" has-footer="true">
+	<div  class="filter-padding">
+		<ion-list>
+			<!-- 'ui.unique' module added in controllers.js -->
+			<ion-item ng-repeat="event in events| unique:attribute | orderBy:attribute" class="item item-checkbox" class="repeated-item">
+				<div ng-if="attribute=='city_name'" >	
+					
+						<label class="checkbox">
+						   <input type="checkbox" ng-model="filterCityData[event.city_name]" >
+						 </label>
+						 <div class="checklist-content">
+							<p>{{event.city_name}}</p>
+						</div>
+				</div>
+				<div ng-if="attribute=='title'" >	
+					
+						<label class="checkbox" >
+						   <input type="checkbox" ng-model="filterTitleData[event.title]" >
+						 </label>
+						 <div class="checklist-content">
+							<p>{{event.title}}</p>
+						</div>
+				</div>
+				
+			</ion-item> 
+			
+			
+			
+			
+			
+			
+		</ion-list>
+	</div>	
+			
+  </ion-content>
+	<!--<div class="bar bar-footer" > // overlap the last item-->
+	<ion-footer-bar >
+		<button class="button button-stable styleRound" ng-click="clearAllFilters()">Reset</button>
+		<button class="button button-positive pull-right styleRound" ng-click="changeSearchFilters(attribute)">Apply</button>
+		</ion-footer-bar>
+	<!--</div>	 -->
+ </ion-modal-view> 
+ 
+
+

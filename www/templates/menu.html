@@ -1,0 +1,88 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-stable" >
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" >
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" id="side-menu" ng-hide="hideLeft">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content >
+      
+	  <div class="list menuDiv" id="menu" style="background-image: url('img/sideMenuBG22.png'); background-size: auto;"> <!--	background-repeat: no-repeat;" -->
+	  <!--<div class="list" style="background-color: #7093b7">-->
+	  <ion-list >
+	  
+	
+		
+	  <ion-item nav-clear menu-close href="#" class="item item-trns" ng-click="redirectCategory()">
+			<a href="#" class="item item-icon-left text-color">
+			<i class="icon ion-home"></i>
+				Home
+			</a>
+		</ion-item>
+		
+		<ion-item nav-clear menu-close href="#"  class="item item-trns" ng-click="redirectCountry()">
+			<a href="#" class="item item-icon-left text-color">
+			<i class="icon ion-earth"></i>
+				Change Country
+			</a>
+		</ion-item>
+		
+		
+		<ion-item nav-clear menu-close href="#"  class="item item-trns" ng-click="launchRegion()">
+			<a href="#" class="item item-icon-left text-color">
+			<i class="icon ion-planet"></i>
+				Select Region
+			</a>
+		</ion-item> 
+		
+		
+		
+		<ion-item nav-clear menu-close href="#" class="item item-trns" ng-click="redirectSearch()">
+			  <a href="#" class="item item-icon-left text-color">
+				<i class="icon ion-search"></i>
+				Search Events
+			  </a>
+		</ion-item>
+		
+		<ion-item nav-clear menu-close href="#" class="item item-trns" ng-click="redirectBrowse()">
+			  <a href="#" class="item item-icon-left text-color">
+				<i class="icon ion-folder"></i>
+				Browse Events
+			  </a>
+		</ion-item>
+		<!--<ion-item nav-clear menu-close href="#" class="item item-trns" ng-click="getFBUserFriends()">
+			  <a href="#" class="item item-icon-left">
+				<i class="icon ion-android-share"></i>
+				Share App
+			  </a>
+		</ion-item> -->
+		<ion-item nav-clear menu-close href="#" class="item item-trns" ng-click="redirectVenue()">
+			  <a href="#" class="item item-icon-left text-color">
+				<i class="icon ion-map"></i>
+				Venue Finder
+			  </a>
+		</ion-item>
+		
+		<ion-item nav-clear menu-close href="#" class="item item-trns" ng-click="logoff()">
+			<a href="#" class="item item-icon-left text-color">
+			<i class="icon ion-power"></i>
+				Exit
+			</a>
+		</ion-item>	
+		
+		<!-- <ion-item class="item item-trns">
+		</ion-item> -->
+		
+		</ion-list>
+	</div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

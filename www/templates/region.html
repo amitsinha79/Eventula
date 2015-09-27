@@ -1,0 +1,46 @@
+<ion-view view-title="Select Region" >
+	
+
+	<ion-nav-bar class="bar-stable" hide-back-button=false>
+	  <ion-nav-buttons side="left" >
+        
+		<a  ng-if="editRegion=='yes'" class="button button-icon icon ion-ios-arrow-thin-left customSize" ng-click="goSearch()"></a>  
+		<button ng-if="editRegion!='yes'" class="button button-icon icon ion-ios-keypad-outline customSize" ng-click="goBack()" >
+        </button>
+	</ion-nav-buttons>
+</ion-nav-bar>
+	
+	
+	
+	<ion-header-bar class="bar-subheader map-headr">
+	<div class="list">
+		<label class="item item-input item-select">
+			<div class="input-label">
+			  With in
+			</div>
+			<select ng-model="regionData.within" ng-change="zoomCircle()">
+			  <option value='10'>10 Miles</option>
+			  <option value='50'>50 Miles</option>
+			  <option value='100'>100 Miles</option>
+			</select>
+		  </label>
+	</div>	
+	</ion-header-bar>
+  <ion-content has-header="true" has-subheader="true" has-footer="true" >
+    
+		<div  class="map-padding" id="map_canvas" >
+		
+			<!-- <div id="findMe">
+				<button  >Reset</button>
+				<!--<img src="img/findMe.jpg" id="button1" style="opacity:10" ></img> -->
+			  <!-- </div> -->
+		</div>	
+	
+  </ion-content>
+  <ion-footer-bar >
+  <button class="button button-stable styleRound" ng-click="onBtnClicked()">Reset</button>
+		
+
+	<button id="buttonRegion" class="button button-positive pull-right styleRound" ng-click="selectRegion()">Select</button>
+  </ion-footer-bar>
+</ion-view>
