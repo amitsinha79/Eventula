@@ -1,0 +1,43 @@
+<ion-view> 
+<ion-nav-title>Locate Venue</ion-nav-title>
+	 
+	<ion-nav-bar class="bar-stable" hide-back-button=true>
+	
+	  <ion-nav-buttons side="left" >
+	   <a class="button button-icon icon ion-ios-arrow-thin-left customSize" ng-click="goBack()"></a>
+	  </ion-nav-buttons>
+	</ion-nav-bar> 
+	<!-- <ion-header-bar class="bar-subheader map-headr">
+	<div class="list">
+		<label class="item item-input item-select">
+			<div class="input-label">
+			  Map Type
+			</div>
+			<select ng-model="mapShow.type" ng-init="mapShow.type='ROADMAP'" ng-change="changeMapType(mapShow.type)">
+			  <option value='SATELLITE'>Satellite</option>
+			  <option selected value='ROADMAP'>Road Map</option>
+			  <option value='HYBRID'>Hybrid</option>
+			  <option value='TERRAIN'>Terrain</option>
+			</select>
+		  </label>
+	</div>	
+	</ion-header-bar> -->
+		
+	<ion-content>
+		<div class="map-padding1" id="map_canvas1" >
+
+		</div>
+    </ion-content>
+	
+    <!-- <ion-footer-bar class="footr-map">
+	<div class="buttons" id="button1">
+		<a class="button button-icon icon ion-navigate">Find Me</a>
+	</div> -->
+		
+	<!-- <div class="title">
+		<ion-infinite-scroll>
+		</ion-infinite-scroll>
+    </div>   
+    </ion-footer-bar> -->
+	
+</ion-view>

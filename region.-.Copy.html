@@ -1,0 +1,59 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Select Country</h1>
+    <div class="buttons">
+      <button class="button button-icon icon ion-ios-close-outline customSize" ng-click="closeRegion()"></button>
+    </div>
+  </ion-header-bar>
+  <ion-header-bar class="bar-subheader headr" >
+	 <!-- <div class="bar bar-subheader"> - having an extra div line, used ion-header-bar to remove that-->
+	 
+	
+		<div class="list">
+		  <label class="item item-input item-select ">
+			 <div class="input-label">
+			  Search By
+			</div>
+			<select ng-model="attribute" ng-init="attribute='country'"  ng-change="showToast(attribute)">
+				<!-- <option value='xxx' selected>--Filter By--</option> -->
+				<option value="country" selected>Country</option>
+				<option value="region">Region</option>
+			</select>
+		  </label>
+		
+	</div>
+	</ion-header-bar>
+	
+  <ion-content>
+    <form>
+      <div ng-if="attribute=='country'" style="width: 100%; height: 550px; background-color: white;" class="list filter-padding">
+	  
+		  <label class="item item-input item-select">
+			<div class="input-label">
+			  Country
+			</div>
+			<select ng-model="regionData.country" ng-init="regionData.country='United Kingdom'">
+			  <option>India</option>
+			  <option selected>United Kingdom</option>
+			  <option>Spain</option>
+			</select>
+		  </label>
+		</div>
+		<div ng-if="attribute=='region'" class="cc-map-wrapper" id="map_canvas" data-tap-disabled="true" class="list filter-padding">
+		<label class="item item-input item-select">
+			<div class="input-label">
+			  With in
+			</div>
+			<select ng-model="regionData.within" ng-init="regionData.within='10 Miles'">
+			  <option selected>10 Miles</option>
+			  <option >50 Miles</option>
+			  <option>100 Miles</option>
+			</select>
+		  </label>
+		</div>	
+	</form>
+  </ion-content>
+  <ion-footer-bar class="footr">
+	<button ng-if="attribute!='xxx'" class="button button-block button-positive" ng-click="selectRegion()">Select</button>
+  </ion-footer-bar>
+</ion-modal-view>

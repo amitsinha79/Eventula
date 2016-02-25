@@ -1,0 +1,61 @@
+<ion-modal-view class="mymodal">
+  <ion-header-bar class="bar-stable">
+		<h1 class="title">Sort Search Result</h1>
+		<div class="buttons">
+		  <button class="button button-icon icon ion-ios-close-outline customSize" ng-click="closeSearchSort()"></button>
+		</div>
+	</ion-header-bar>
+	
+	<ion-content has-header="true" has-footer="true">
+	
+		
+				<div class="list">
+
+				  <label class="item item-radio">
+					<input type="radio" id="r1" name="group"  value="start_time" ng-model="sortBy.opt">
+					<div class="item-content">
+					  Event Start Date/Time
+					</div>
+					<i class="radio-icon ion-checkmark"></i>
+				  </label>
+				  
+				  <label class="item item-radio">
+					<input type="radio" id="r4" name="group"  value="stop_time" ng-model="sortBy.opt">
+					<div class="item-content">
+					  Event Stop Date/Time
+					</div>
+					<i class="radio-icon ion-checkmark"></i>
+				  </label>
+
+				  <label class="item item-radio">
+					<input type="radio" id="r2" name="group"  value="created" ng-model="sortBy.opt">
+					<div class="item-content">
+					  Event Created On
+					</div>
+					<i class="radio-icon ion-checkmark"></i>
+				  </label>
+				  
+				  <label class="item item-radio">
+					<input type="radio" id="r3" name="group"  value="modified" ng-model="sortBy.opt">
+					<div class="item-content">
+					  Event Modified On
+					</div>
+					<i class="radio-icon ion-checkmark"></i>
+				  </label>
+				  
+
+				</div>
+			
+	
+			
+  </ion-content>
+	<!--<div class="bar bar-footer" > // overlap the last item-->
+	<ion-footer-bar >
+		<button class="button button-stable styleRound" ng-click="clearAllSort()">Reset</button>
+		<button class="button button-positive pull-right styleRound" ng-click="changeSearchSort()">Apply</button>
+		</ion-footer-bar>
+	<!--</div>	 -->
+ </ion-modal-view> 
+ 
+
+

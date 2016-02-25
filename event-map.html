@@ -1,0 +1,25 @@
+<ion-view> 
+<ion-nav-title>Locate {{searchType}}</ion-nav-title>
+	 
+	<ion-nav-bar class="bar-stable" hide-back-button=true>
+	
+	  <ion-nav-buttons side="left" >
+	   <a class="button button-icon icon ion-ios-arrow-thin-left customSize" ng-click="goBack()"></a>
+	  </ion-nav-buttons>
+	  
+	  <!--<ion-nav-buttons side="right" >
+        <p ng-if="searchType=='Venue'">{{count}} found on map</p>
+	</ion-nav-buttons> -->
+	
+	</ion-nav-bar> 
+	
+		
+	<ion-content>
+		<div class="map-padding1" id="map_canvas1" >
+
+		</div>
+    </ion-content>
+	
+   
+	
+</ion-view>

@@ -1,0 +1,87 @@
+<ion-view> 
+<ion-nav-title>More info...</ion-nav-title>
+	 
+	<ion-nav-bar class="bar-stable" hide-back-button=true>
+	 <ion-nav-buttons side="left" ><a class="button button-icon icon ion-ios-arrow-thin-left customSize" ng-click="backToSearchResult()"></a>
+	 <a ng-if="calSearch=='yes'" class="button button-icon icon ion-ios-arrow-thin-left customSize" ng-click="backToCalSearch()"></a>
+      </ion-nav-buttons>
+	</ion-nav-bar>
+	
+	
+	
+		
+  <ion-content has-header="true" has-footer="true">
+		
+        <div class="list">
+
+		  <div class="item">
+			
+			<span class="desc-span">
+					  
+					
+					<!--<p >Share on</p> -->
+					
+					<a  class="tab-item" href="#" ng-click="popover.show($event)"> <!--ng-click="fbLogin()" -->
+					  
+					  <img align = "right" src="img/fbLogo2.jpg" />
+					  
+					</a> 
+										
+					<p></p>
+					<a  class="tab-item" href="#" ng-click="calendarPopover.show($event)"> <!--ng-click="fbLogin()" -->
+					  
+					  <img align = "right" src="img/calendar.jpg" />
+					  
+					</a> 
+					<p></p>
+					<a  class="tab-item" href="#" ng-click="initialize(event.venue_name, event.venue_address, event.postal_code, event.latitude,event.longitude)"> <!--ng-click="fbLogin()" -->
+					  
+					  <img align = "right" src="img/maps.jpg" />
+					  
+					</a> 
+					
+					<!--<p><button class="button button-positive styleRound4" ng-click="popover.show($event)">Share on Facebook</button></p>
+					<button class="button button-royal styleRound4" ng-click="addToCalendar()">Add to Calendar</button>
+					-->
+					
+			</span> 
+			<img align = "centre" class="auto-image" src="{{(event.image.medium.url)?event.image.medium.url:'img/otherMedium.jpg' }}" />
+			<h3>{{event.title}} </h3>
+			<p>{{event.city_name}} </p>
+			<p>{{event.start_time}}</p>
+			
+		  
+			
+			</div>
+
+		  <div class="item item-body">
+			<!-- <img class="fullImage" src="img/googleMap6.jpg" ng-click="initialize(event.venue_name, event.venue_address, event.postal_code, event.latitude,event.longitude)"/> -->
+			
+			
+			<!-- to use the HTML tag in the description -->
+			<p ng-bind-html="event.description"> 
+			
+			
+		  </div>
+
+		<div class="eventful-badge2"  > <!--class="desc-badge desc-span" -->
+				<p style="font-size: 12px">For ticket detail visit:</p>
+				<a href="#" ng-click="goToUrl(event.url)">
+					 <img src="http://api.eventful.com/images/powered/eventful_58x20.gif" class="animated rubberBand">
+				</a>
+				
+					<p style="font-size: 11px">Events by Eventful</p>
+					
+				
+				</div>	
+
+		</div>
+		
+		
+  </ion-content>
+	
+	<!-- <ion-footer-bar class="footr">
+		<button class="button button-block button-positive" position="center" ng-click="goToUrl(event.url)">Go To Site</button>
+	</ion-footer-bar> -->
+	
+</ion-view>

@@ -1,0 +1,47 @@
+<ion-popover-view class="fbPop2">
+	<ion-header-bar class="bar-stable">
+      <h3 class="title"> Add event to your calendar</h3> <!--<span><img src="img/calendar2.jpg" /></span>  -->
+	  <div class="buttons">
+		  <button class="button button-icon icon ion-ios-close-outline customSize" ng-click="closeCalPopover()"></button>
+		</div>
+    </ion-header-bar>
+	<ion-header-bar class="bar-subheader " >
+	<span class="title">
+	<p class=" calHeaderDivText" >
+	  {{calendarTitle}}
+	</p>
+</span>
+	</ion-header-bar>
+        <ion-content >
+		
+			<!-- <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> -->
+		   <div  >
+		 
+		<mwl-calendar
+        view="calendarView"
+        current-day="calendarDay"
+        view-title="calendarTitle"
+		on-drill-down-click="drillDownClicked"
+		events="events"
+        auto-open="false"
+		cell-is-open="false"
+		
+		>
+		
+    </mwl-calendar> 
+	 </div> 
+		 
+	 </ion-content>
+	 <ion-footer-bar >
+	 
+	 
+		<div class="title">
+
+		
+			<button class="button button-small button-positive" ng-click="addCalEvent()"> Add to Calendar </button>
+		
+		</div>
+		
+		
+	 </ion-footer-bar>
+</ion-popover-view>

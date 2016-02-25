@@ -1,0 +1,61 @@
+<ion-view view-title="Upcoming {{$scope.category.selected}} Events">
+
+	<ion-nav-buttons side="right" >
+        <a class="button button-icon icon ion-ios7-more" ng-click="selectSearchFilters()"></a>
+    </ion-nav-buttons>
+	
+	<!-- for freezed sub-header
+	<ion-header-bar class="bar-subheader">
+	
+		<div class="eventful-badge eventful-medium" style="float:right" >
+		
+			<a href="http://eventful.com/">
+				 <img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+				class="animated rubberBand" alt="Local Events, Concerts, Tickets">
+				<p>Events by Eventful&nbsp;</p>
+			</a>
+		
+		
+		</div>	
+		 
+	</ion-header-bar>	
+    -->
+		
+  <ion-content has-header="true" has-footer="true">
+		
+        <ion-list>
+			
+            <ion-item ng-repeat="event in events| filter:filterBy |orderBy:'start_time'"  href="{{event.url}}" class="repeated-item">
+				<div class="content">
+					<img src="{{(event.image.thumb.url)?event.image.thumb.url:'http://s1.evcdn.com/store/skin/no_image/categories/48x48/other.jpg' }}" /> 
+					<p>{{event.title}} </p>
+					<p>{{event.city_name}} </p>
+					<p>{{event.start_time}}</p>
+				</div>
+            </ion-item>
+        </ion-list>
+		
+  </ion-content>
+	
+	<ion-footer-bar>
+		<div class="buttons"></div>
+		
+		<div class="title">
+			<ion-infinite-scroll
+				
+				on-infinite="loadMore()"
+				icon="ion-loading-c"
+				distance="1%">
+			</ion-infinite-scroll>
+		</div>
+		<div class="buttons eventful-badge eventful-small"  >
+		
+			<a href="http://eventful.com/">
+				 <img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+				class="animated rubberBand" alt="Local Events, Concerts, Tickets">
+				<p>Events by Eventful&nbsp;</p>
+			</a>
+		</div>	
+	</ion-footer-bar>
+	
+</ion-view>

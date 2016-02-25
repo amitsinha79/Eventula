@@ -1,0 +1,56 @@
+<ion-popover-view class="fbPop2">
+	<ion-header-bar class="bar-stable">
+      <h3 class="title"> Say your saying...</h3> <!--<span><img src="img/fbLogo6.jpg" /> </span> -->
+	  <div class="buttons">
+		  <button class="button button-icon icon ion-ios-close-outline customSize" ng-click="closeFBPopover()"></button>
+		</div>
+    </ion-header-bar>
+	
+        <ion-content >
+		<!--<div class="list">
+			
+		  <div class="item item-input-inset">
+			<label class="item-input-wrapper">
+			  <input type="text" placeholder="I'm counting on..." ng-model="mySaying">
+			</label>
+			<button class="button button-small" ng-click="fbLogin(mySaying)">
+			  Post
+			</button>
+		  </div>
+
+		</div> -->
+		
+			
+	<div  align="center"  >
+	
+		
+		
+		  <img ng-if="imgURL!=''" id="eventImage"  src="{{(event.image.medium.url)?event.image.medium.url:'img/otherMedium.jpg' }}" ng-click="removeEventImage()"></img>
+		  <img ng-if="imgURL==''" id="noImage"  src="img/noImage.png" ></img>
+		
+		<p ng-if="imgURL!=''" id="eventImage2" style="font-size:11px" >Click image to remove</p>
+		<p ng-if="imgURL==''" id="noImage2style" style="font-size:11px" >No image selected</p>
+			
+		  
+	<label class="item item-input item-stacked-label fbpop-label" >
+			<textarea placeholder="I'm counting on..." rows="6"  id="txtArea" style="font-size: 12px" ng-model="mySaying.text">
+			</textarea>
+		</label>	
+		
+	</div>
+	
+	
+		
+	
+	<div class="list" align="center">
+		<span >
+			 <button class="button button-small" ng-click="addEventDetail()">Add event detail</button> 
+			<button class="button button-small" ng-click="addEventImage()">Add event image</button>
+			<button class="button button-small button-positive" ng-click="fbLogin(mySaying.text)"> POST </button>
+		</span>
+	</div>
+			
+		
+	 </ion-content>
+</ion-popover-view>
+	  

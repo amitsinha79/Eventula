@@ -1,0 +1,114 @@
+<ion-view view-title="Search Events">
+<ion-nav-bar class="bar-stable" hide-back-button=false>
+	  <ion-nav-buttons side="left" >
+       <button class="button button-icon icon ion-ios-keypad-outline customSize" ng-click="menuToggle()">
+        </button>
+	</ion-nav-buttons>
+</ion-nav-bar>	
+	<ion-header-bar class="bar-subheader headr" >
+	 <!-- <div class="bar bar-subheader"> - having an extra div line, used ion-header-bar to remove that-->
+	 
+	
+		<div class="list">
+		<label class="item item-input item-select ">
+			 <div class="input-label">
+			  Search By
+			</div>
+			 <select ng-model="countryRegion.opt"  >
+		
+				<option value='country' selected>Country</option>
+				<option value='region'>Region</option> 
+			</select>
+			
+			 
+		  </label>
+		 </div>
+		
+	</ion-header-bar>
+	
+	<ion-content has-header="true" has-subheader="true" has-footer="true">
+	<div  class="list filter-padding">
+	
+		  <label class="item item-input item-select">
+					<div class="input-label">
+					  Event Type
+					</div>
+					<select ng-model="searchCategory.opt" >
+					<option selected>All</option>
+					<option>Sports</option> 			
+					<option>Music</option> 				
+					<option>Finance</option> 			
+					<option>Performing Arts</option> 	
+					<option>Comedy</option> 			
+					<option>Festivals</option> 			
+					<option>Nightlife & Singles</option>
+					<option>Food & Wine</option> 		
+					<option>Kids & Family</option> 		
+					<option>Art Galleries & Exhibits</option> 	
+					<option>Business & Networking</option> 		
+					<option>Politics</option> 					
+					<option>Education</option> 					
+					<option>Film</option> 						
+					<option>Fundraising & Charity</option> 		
+					<option>Health & Wellness</option> 			
+					<option>Holiday</option> 					
+					<option>Literary & Books</option> 			
+					<option>Museums & Attractions</option> 		
+					<option>Neighborhood</option> 				
+					<option>Organizations & Meetups</option> 	
+					<option>Outdoors & Recreation</option> 		
+					<option>Politics & Activism</option> 		
+					<option>Religion & Spirituality</option> 	
+					<option>Sales & Retail</option> 			
+					<option>Science</option> 					
+					<option>Technology</option> 				
+					<option>University & Alumni</option> 		
+					<option>Other & Miscellaneous</option> 		
+					</select>
+				  </label>
+		
+		<div ng-if="countryRegion!=''" class="list">
+			
+			 <div class="item item-button-right">
+				From Date: <span style="float:right">{{dateFrom}}</span>
+				<button class="button button-calm" ng-click="openDatePickerFrom()">
+				  <i class="icon ion-calendar"></i>
+				</button>
+			  </div>
+			
+			<div class="item item-button-right">
+				To Date: <span style="float:right">{{dateTo}}</span>
+				<button class="button button-calm" ng-click="openDatePickerTo()">
+				  <i class="icon ion-calendar"></i>
+				</button>
+			  </div>
+			
+			 <div ng-if="countryRegion.opt=='country'" class="item item-button-right">
+				Current Country: <span style="float:right"><p> {{countryToBrows}} </p></span>
+				<button class="button button-assertive" ng-click="editCountry()">
+				  <i class="icon ion-edit"></i>
+				</button>
+			  </div>
+			
+			<div ng-if="countryRegion.opt=='region'" class="item item-button-right">
+				Current Region: <span style="float:right"><p>{{regionLocality}}</p> </span><br>
+				Within (Miles): <span style="float:right"><p>{{regionSelected}}</p></span>
+				<button class="button button-assertive" ng-click="editRegion()">
+				  <i class="icon ion-edit"></i>
+				</button>
+			  </div>
+
+	</div>
+		
+	</div> 
+	
+    
+  </ion-content>
+  
+  <ion-footer-bar >
+		<button class="button button-stable styleRound" ng-click="resetSearch()">Reset</button>
+		
+
+	<button id="buttonRegion" class="button button-positive pull-right styleRound" ng-click="doSearch()">Search</button>
+	</ion-footer-bar>
+</ion-view>
